@@ -9,7 +9,7 @@
 ---
 
 ## 1. Objetivo General
-Diseñar, construir y validar un prototipo embebido portátil basado en el microcontrolador **ESP32** que integre sensores ópticos (**MAX30102**) y acústicos digitales (**INMP441**), complementado con una interfaz visual intuitiva (**Neopixel WS2812**) y un sistema de alimentación autónomo recargable, capaz de evaluar parámetros biomédicos clave (saturación de oxígeno en sangre, frecuencia cardíaca, patrones de tos y auscultación cardiorrespiratoria) para asistir en el triaje rápido y monitoreo no invasivo de pacientes con sospecha de patologías respiratorias.
+Diseñar, construir y validar una base embebida portátil basada en el microcontrolador **ESP32** para la captura y acondicionamiento de señales biomédicas cardiorrespiratorias, integrando sensores ópticos (**MAX30102**) y acústicos digitales (**INMP441**), alimentación autónoma recargable y soporte para interfaz visual (**Neopixel WS2812**), estructurada bajo una arquitectura modular y desacoplada que permita derivar diferentes implementaciones según los requerimientos del proyecto (triaje clínico, estetoscopio digital inteligente con IA, telemetría IoT o datalogger médico).
 
 ---
 
@@ -23,12 +23,8 @@ Diseñar, construir y validar un prototipo embebido portátil basado en el micro
    * Desarrollar algoritmos embebidos para el filtrado digital en tiempo real de las señales fotopletismográficas (PPG), permitiendo el cálculo de la saturación arterial de oxígeno ($\%SpO_2$) y la frecuencia cardíaca (BPM).
    * Implementar técnicas de filtrado paso-banda ($100\text{ Hz} - 2000\text{ Hz}$) y análisis de energía (RMS) sobre el flujo de audio digital para aislar ruidos pulmonares, eventos de tos y mitigar artefactos mecánicos y ambientales.
 
-3. **Interfaz Humano-Máquina (HMI) para Triaje Clínico:**
-   * Programar la barra de 8 LEDs direccionables (WS2812) para que opere como un semáforo de riesgo clínico inmediato:
-     * **Verde:** Parámetros dentro de rangos normales ($SpO_2 \ge 95\%$).
-     * **Amarillo:** Alerta preventiva / hipoxemia leve ($90\% \le SpO_2 \le 94\%$).
-     * **Rojo:** Alerta crítica / hipoxemia severa ($SpO_2 < 90\%$).
-   * Diseñar modos visuales dinámicos que representen el pulso cardíaco en tiempo real y la intensidad de la respiración o tos (VU-meter).
+3. **Interfaz Visual y Retroalimentación Modular (Neopixel WS2812):**
+   * Implementar el control digital de la barra de 8 LEDs direccionables como actuador visual multipropósito, adaptable a la implementación elegida (pudiendo operar como semáforo de alerta clínica, indicador de pulso, VU-meter de tos/nivel sonoro o monitor de estado del sistema).
 
 4. **Validación con Bases de Datos Clínicas de Referencia:**
    * Utilizar bases de datos biomédicas estándar internacionales (**ICBHI 2017 Challenge** para sonidos respiratorios y **PhysioNet 2016 Challenge** para fonocardiografía) para calibrar el comportamiento del sensor acústico y explorar modelos de clasificación automatizada de patologías (asma, EPOC, neumonía, soplos cardíacos).

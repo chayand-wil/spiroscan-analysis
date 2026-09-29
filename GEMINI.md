@@ -28,6 +28,7 @@ Este archivo es leído automáticamente por el asistente de IA en cada sesión d
 4. **Alimentación y seguridad:** El interruptor On/Off debe cortar la línea `OUT+` hacia el pin `VIN` del ESP32. Mantener la alimentación lógica de sensores en `3V3`.
 5. **Documentación de referencia:**
    * Contexto maestro: [INSTRUCCIONES_PROYECTO.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/INSTRUCCIONES_PROYECTO.md)
+   * Guía de Datos e IA: [INSTRUCCIONES_DATOS_IA.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/INSTRUCCIONES_DATOS_IA.md)
    * Inventario de datos clínicos: [docs/RESUMEN_DATOS.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/docs/RESUMEN_DATOS.md)
    * Bitácora de avances: [docs/AVANCES_PROYECTO.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/docs/AVANCES_PROYECTO.md)
    * Hoja de ruta y pendientes: [docs/TAREAS_PENDIENTES.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/docs/TAREAS_PENDIENTES.md)

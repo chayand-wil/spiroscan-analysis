@@ -66,6 +66,7 @@ A partir de la misma base de adquisición de datos, se podrán desplegar una o m
 
 ### C. Sistema Documental
 * [x] [GEMINI.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/GEMINI.md): Reglas de workspace auto-cargadas en el entorno.
+* [x] [INSTRUCCIONES_DATOS_IA.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/INSTRUCCIONES_DATOS_IA.md): Manual especializado para Fase 2 (Datos Clínicos) y Fase 4 (IA y Clasificación Acústica).
 * [x] [Objetivo.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/Objetivo.md): Objetivos generales y específicos del proyecto.
 * [x] [docs/RESUMEN_DATOS.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/docs/RESUMEN_DATOS.md): Diccionario de variables, conteos y mapeo exhaustivo de datos.
 * [x] [docs/AVANCES_PROYECTO.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/docs/AVANCES_PROYECTO.md): Bitácora de decisiones tomadas e hitos completados.

@@ -25,9 +25,9 @@ Este documento registra cronológicamente los hitos alcanzados, las decisiones t
 * **Avance:**
   * Se analizó el panorama de enfermedades respiratorias de alta incidencia (asma, EPOC, neumonía, bronquiolitis) y las tecnologías comúnmente empleadas en instrumentación biomédica (oximetría, espirometría, auscultación digital).
   * Se tomó la decisión de diseñar un **dispositivo híbrido no invasivo (óptico + acústico)**:
-    * El sensor óptico evalúa el impacto sistémico de la afección respiratoria mediante la caída de la saturación arterial de oxígeno ($SpO_2$) y la frecuencia cardíaca reactiva.
-    * El sensor acústico registra la signología pulmonar directa (tos, sibilancias y estertores) y la actividad cardíaca fundamental.
-  * Se definió un sistema de retroalimentación en tiempo real basado en un **código de colores tipo semáforo** mediante LEDs para facilitar el triaje rápido sin requerir pantallas complejas en etapas iniciales.
+    * El canal óptico (MAX30102) evalúa el impacto sistémico mediante la saturación de oxígeno ($SpO_2$) y la frecuencia cardíaca.
+    * El canal acústico (INMP441) registra la signología pulmonar directa (tos, ruidos respiratorios) y actividad cardíaca.
+  * Se contempló la barra de LEDs Neopixel como actuador visual multipropósito (en el chat previo la IA sugirió la idea tentativa de un semáforo de colores para triaje, pero el uso definitivo de la interfaz visual queda abierto a las necesidades de la implementación que se elija).
 
 ---
 

@@ -2,86 +2,6 @@
   "version": 5,
   "links": [
     {
-      "source": "GEMINI.md",
-      "target": "instrucciones_proyecto",
-      "originalText": "INSTRUCCIONES_PROYECTO.md"
-    },
-    {
-      "source": "GEMINI.md",
-      "target": "resumen_datos",
-      "originalText": "docs/RESUMEN_DATOS.md"
-    },
-    {
-      "source": "GEMINI.md",
-      "target": "avances_proyecto",
-      "originalText": "docs/AVANCES_PROYECTO.md"
-    },
-    {
-      "source": "GEMINI.md",
-      "target": "tareas_pendientes",
-      "originalText": "docs/TAREAS_PENDIENTES.md"
-    },
-    {
-      "source": "INSTRUCCIONES_PROYECTO.md",
-      "target": "gemini",
-      "originalText": "GEMINI.md"
-    },
-    {
-      "source": "INSTRUCCIONES_PROYECTO.md",
-      "target": "links",
-      "originalText": "links.md"
-    },
-    {
-      "source": "INSTRUCCIONES_PROYECTO.md",
-      "target": "gemini",
-      "originalText": "GEMINI.md"
-    },
-    {
-      "source": "INSTRUCCIONES_PROYECTO.md",
-      "target": "objetivo",
-      "originalText": "Objetivo.md"
-    },
-    {
-      "source": "INSTRUCCIONES_PROYECTO.md",
-      "target": "resumen_datos",
-      "originalText": "docs/RESUMEN_DATOS.md"
-    },
-    {
-      "source": "INSTRUCCIONES_PROYECTO.md",
-      "target": "avances_proyecto",
-      "originalText": "docs/AVANCES_PROYECTO.md"
-    },
-    {
-      "source": "INSTRUCCIONES_PROYECTO.md",
-      "target": "tareas_pendientes",
-      "originalText": "docs/TAREAS_PENDIENTES.md"
-    },
-    {
-      "source": "Objetivo.md",
-      "target": "instrucciones_proyecto",
-      "originalText": "INSTRUCCIONES_PROYECTO.md"
-    },
-    {
-      "source": "Objetivo.md",
-      "target": "resumen_datos",
-      "originalText": "docs/RESUMEN_DATOS.md"
-    },
-    {
-      "source": "Objetivo.md",
-      "target": "avances_proyecto",
-      "originalText": "docs/AVANCES_PROYECTO.md"
-    },
-    {
-      "source": "Objetivo.md",
-      "target": "tareas_pendientes",
-      "originalText": "docs/TAREAS_PENDIENTES.md"
-    },
-    {
-      "source": "Objetivo.md",
-      "target": "links",
-      "originalText": "links.md"
-    },
-    {
       "source": "docs/TAREAS_PENDIENTES.md",
       "target": "links",
       "originalText": "links.md"
@@ -89,32 +9,12 @@
   ],
   "fileMap": [
     [
-      "gemini",
-      "GEMINI.md"
-    ],
-    [
-      "links",
-      "links.md"
-    ],
-    [
-      "instrucciones_proyecto",
-      "INSTRUCCIONES_PROYECTO.md"
-    ],
-    [
-      "objetivo",
-      "Objetivo.md"
-    ],
-    [
-      "avance actual - hardware",
-      "Avance actual - hardware.md"
+      "avances_proyecto",
+      "docs/AVANCES_PROYECTO.md"
     ],
     [
       "resumen_datos",
       "docs/RESUMEN_DATOS.md"
-    ],
-    [
-      "avances_proyecto",
-      "docs/AVANCES_PROYECTO.md"
     ],
     [
       "tareas_pendientes",
@@ -123,32 +23,12 @@
   ],
   "fileDisplayMap": [
     [
-      "GEMINI.md",
-      "REGLAS Y CONTEXTO DEL WORKSPACE (GEMINI.md)"
-    ],
-    [
-      "links.md",
-      "links"
-    ],
-    [
-      "INSTRUCCIONES_PROYECTO.md",
-      "INSTRUCCIONES MAESTRAS DEL PROYECTO"
-    ],
-    [
-      "Objetivo.md",
-      "OBJETIVO DEL PROYECTO"
-    ],
-    [
-      "Avance actual - hardware.md",
-      "Avance actual - hardware"
+      "docs/AVANCES_PROYECTO.md",
+      "BITÁCORA DE AVANCES DEL PROYECTO"
     ],
     [
       "docs/RESUMEN_DATOS.md",
       "RESUMEN, CONTEO Y MAPEO DE LOS DATOS BIOMÉDICOS"
-    ],
-    [
-      "docs/AVANCES_PROYECTO.md",
-      "BITÁCORA DE AVANCES DEL PROYECTO"
     ],
     [
       "docs/TAREAS_PENDIENTES.md",
@@ -157,42 +37,11 @@
   ],
   "fileMetadataMap": [
     [
-      "GEMINI.md",
+      "docs/AVANCES_PROYECTO.md",
       {
-        "path": "/",
+        "path": "/docs",
         "tags": [],
-        "preview": "Este archivo es leído automáticamente por el asistente de IA en cada sesión de trabajo dentro de est..."
-      }
-    ],
-    [
-      "INSTRUCCIONES_PROYECTO.md",
-      {
-        "path": "/",
-        "tags": [],
-        "preview": "Documento de Contexto, Estado Actual y Directrices para Asistentes de IA y Desarrolladores Este arch..."
-      }
-    ],
-    [
-      "links.md",
-      {
-        "path": "/",
-        "tags": [],
-        "preview": "https://archive.physionet.org/pn3/challenge/2016/ h https://physionet.org/content/circor-heart-sound..."
-      }
-    ],
-    [
-      "Objetivo.md",
-      {
-        "path": "/",
-        "tags": [],
-        "preview": "Desarrollo de un Monitor Portátil No Invasivo de Salud Cardiorrespiratoria (Óptico + Acústico) para ..."
-      }
-    ],
-    [
-      "Avance actual - hardware.md",
-      {
-        "path": "/",
-        "tags": []
+        "preview": "Proyecto: Monitor Portátil de Salud Cardiorrespiratoria (Óptico + Acústico) Asignatura: f tecno (8vo..."
       }
     ],
     [
@@ -201,14 +50,6 @@
         "path": "/docs",
         "tags": [],
         "preview": "Directorio base: data/ Última actualización: Septiembre 2026 Este documento detalla el inventario cu..."
-      }
-    ],
-    [
-      "docs/AVANCES_PROYECTO.md",
-      {
-        "path": "/docs",
-        "tags": [],
-        "preview": "Proyecto: Monitor Portátil de Salud Cardiorrespiratoria (Óptico + Acústico) Asignatura: f tecno (8vo..."
       }
     ],
     [
