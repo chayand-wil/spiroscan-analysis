@@ -1,0 +1,16 @@
+# Archivos comprimidos de datasets
+*.zip
+*.tar.gz
+*.rar
+data/archive.zip
+
+# Carpeta cruda/temporal de descarga de ICBHI (ya fue procesada por el script)
+data/ICBHI_final_database/
+
+# Archivos de audio pesado .wav de ICBHI (se mantienen locales en tu Mac)
+data/ICBHI_organizado - pacientes de los links filtrados/**/*.wav
+
+# Archivos temporales de macOS y VS Code
+.DS_Store
+data/.DS_Store
+.vscode/markdown-live-*.json

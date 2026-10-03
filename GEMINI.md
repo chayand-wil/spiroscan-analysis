@@ -15,9 +15,12 @@ Este archivo es leído automáticamente por el asistente de IA en cada sesión d
 ## 2. Hardware Físico en Posesión del Equipo
 * **Microcontrolador:** ESP32 (3.3V, Dual Core, soporte I2C e I2S por hardware).
 * **Canal Óptico:** Sensor MAX30102 (Pulsioximetría $SpO_2$ y fotopletismografía PPG por bus I2C).
-* **Canal Acústico:** Micrófono MEMS digital INMP441 (Audio digital de auscultación/tos por bus I2S).
-* **Feedback Visual:** Módulo Neopixel WS2812 de 8 LEDs (Línea de datos GPIO 4).
+* **Canal Acústico:** Micrófono MEMS digital INMP441 (Audio digital de auscultación/tos por bus I2S: SCK 14, WS 15, SD 32).
+* **Feedback Visual:** Módulo Neopixel WS2812 de 8 LEDs (Línea de datos GPIO 25, homologado con Wokwi y firmware oficial).
+* **Control de Usuario:** Botón interactivo K1 en GPIO 17 (pull-up interno) para alternar modos o despertar.
 * **Alimentación Autónoma:** Celda de litio (3.7V) + Módulo de carga/protección TP4056 + Switch Rocker mecánico On/Off.
+* **Servidor Remoto / Host Backend e IA:** Apple Mac Studio (ubicada en sitio remoto/laboratorio, conectada a Internet; ejecutará el backend FastAPI, base de datos SQLite y Ollama Docker con LLaMA 3.2 3B para inferencia médica; se accede mediante túnel seguro HTTPS/WSS como Cloudflare Tunnel o ngrok).
+* **Ecosistema Integrado:** Repositorio hermano [`FeriaTecnologica2026`](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/FeriaTecnologica2026) (App móvil Expo/React Native, Backend FastAPI, Emulador Wokwi).
 
 ---
 
@@ -32,3 +35,4 @@ Este archivo es leído automáticamente por el asistente de IA en cada sesión d
    * Inventario de datos clínicos: [docs/RESUMEN_DATOS.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/docs/RESUMEN_DATOS.md)
    * Bitácora de avances: [docs/AVANCES_PROYECTO.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/docs/AVANCES_PROYECTO.md)
    * Hoja de ruta y pendientes: [docs/TAREAS_PENDIENTES.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/docs/TAREAS_PENDIENTES.md)
+   * Guía y resolución de dudas conceptuales: [docs/RESOLUCION_DUDAS.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/docs/RESOLUCION_DUDAS.md)

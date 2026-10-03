@@ -11,7 +11,7 @@ Este documento registra cronológicamente los hitos alcanzados, las decisiones t
 
 ```
 [FASE 1: Conceptualización y Selección de Hardware]   ██████████ 100% (Completada)
-[FASE 2: Estructuración y Curación de Datos Clínicos]  ████████░░  85% (Estructura lista, audios ICBHI pendientes de descarga)
+[FASE 2: Estructuración y Curación de Datos Clínicos]  ██████████ 100% (ICBHI y PhysioNet 100% poblados y verificados)
 [FASE 3: Ensamble Físico y Pruebas Unitarias]          ███░░░░░░░  30% (Componentes adquiridos, pinout asignado)
 [FASE 4: Firmware y Procesamiento de Señales en ESP32] █░░░░░░░░░  10% (Arquitectura definida)
 [FASE 5: Modelado de IA y Calibración Clínica]         ░░░░░░░░░░   0% (Pendiente)
@@ -81,3 +81,24 @@ Este documento registra cronológicamente los hitos alcanzados, las decisiones t
     * `docs/AVANCES_PROYECTO.md`: Registro de bitácora y estado de avance.
     * `docs/TAREAS_PENDIENTES.md`: Backlog priorizado de actividades a ejecutar.
     * `Objetivo.md`: Declaración formal del propósito y metas del proyecto.
+
+---
+
+## Hito 6: Población y Organización Automatizada de ICBHI 2017 (920 Grabaciones)
+* **Fecha:** Septiembre 2026
+* **Avance:**
+  * Se implementó el script de distribución automatizada [organizar_por_categoria.py](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/organizar_por_categoria.py) (operativo con Python estándar sin dependencias externas).
+  * Se transfirieron e indexaron **920 archivos `.wav`** y **920 archivos de anotación de ciclos `.txt`** desde `data/ICBHI_final_database/` hacia las 16 categorías clínicas y 126 carpetas de pacientes en `data/ICBHI_organizado - pacientes de los links filtrados/`.
+  * Se verificó la consistencia estricta de pares (1:1 `.wav` y `.txt`) para cada uno de los 126 pacientes y se eliminaron los 126 marcadores temporales `LEEME.txt`.
+
+---
+
+## Hito 7: Homologación de Arquitectura con `FeriaTecnologica2026` y Asignación de Mac Studio
+* **Fecha:** Octubre 2026
+* **Avance:**
+  * Se realizó la auditoría técnica del repositorio hermano [`FeriaTecnologica2026`](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/FeriaTecnologica2026), estableciendo la sinergia de integración: nuestro repositorio aporta el "Cerebro Clínico" (datasets curados y modelos de clasificación acústica entrenados) y el repositorio hermano aporta la "Infraestructura de Despliegue" (App Móvil React Native, Backend FastAPI y simulador Wokwi).
+  * Se homologó la asignación de pines del ESP32 (`SCK=14, WS=15, SD=32, Neopixel=25, Botón=17`) en toda la documentación técnica para garantizar total compatibilidad con el firmware de producción y el circuito virtual en Wokwi.
+  * **Asignación de Infraestructura Remota:** Se definió que el backend FastAPI, la base de datos persistente SQLite y el contenedor Docker con Ollama (**LLaMA 3.2 3B**) estarán alojados en una **Apple Mac Studio** (procesador Apple Silicon M-series) ubicada en una locación remota fija. Se accederá a ella a través de Internet mediante un túnel seguro público (**Cloudflare Tunnel** o **ngrok**), permitiendo aprovechar la aceleración por hardware de Apple Silicon sin tener que transportar la máquina al evento, requiriendo conexión a Internet en el stand (vía *hotspot* 4G/5G o Wi-Fi).
+  * Se creó la guía conceptual viva de resolución de dudas técnicas y médicas en [docs/RESOLUCION_DUDAS.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/docs/RESOLUCION_DUDAS.md).
+
+
