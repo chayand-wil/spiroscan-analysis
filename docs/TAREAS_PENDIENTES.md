@@ -99,9 +99,8 @@ Este documento contiene la lista detallada y priorizada de tareas.
   - Iniciar el contenedor de Ollama (`docker compose up -d ollama` o instalación nativa en macOS).
   - Descargar y verificar el modelo `llama3.2:3b` aprovechando la aceleración de hardware de Apple Silicon.
   - Probar la respuesta del asistente en `POST /api/ai/chat`.
-- [ ] 🟡 **5.3 Integración del modelo de IA entrenado en `ai_engine.py`:**
-  - Exportar el modelo de clasificación respiratoria/cardíaca entrenado en nuestro repo (`models/clasificador_respiratorio.pkl` u ONNX).
-  - Modificar `Backend/ai_engine.py` en la Mac Studio para que sustituya los umbrales heurísticos simples por la inferencia del modelo real ante los datos de audio/telemetría.
+- [x] 🟡 **5.3 Integración del modelo de IA entrenado en `ai_engine.py`:**
+  - Exportar el modelo de clasificación respiratoria entrenado en nuestro repo (`models/mejor_clasificador_icbhi.joblib` y `modelo_icbhi_exportado.json`). *(Completado: integrado en `FeriaTecnologica2026/Backend/ai_engine.py` y `main.py` con soporte para clasificación acústica y contexto en LLM Ollama)*.
 - [ ] 🟡 **5.4 Configuración de túnel seguro público en la Mac Studio (Acceso Remoto):**
   - Instalar y configurar un túnel persistente (**Cloudflare Tunnel / `cloudflared`** o **ngrok**) en la Mac Studio apuntando al puerto local 8000 (`http://localhost:8000`).
   - Obtener una URL pública HTTPS/WSS segura (ejemplo: `https://spiroscan-api.dominio.com`).

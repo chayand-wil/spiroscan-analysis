@@ -127,6 +127,36 @@ Este documento registra cronológicamente los hitos alcanzados, las decisiones t
     * **Especificidad (Confirmación de ciclo normal):** $75.61\%$
     * **Score Oficial ICBHI:** $\mathbf{75.77\%}$
 
+---
+
+## Hito 10: Extracción Masiva del Dataset Completo (6,898 Ciclos) y Benchmark Clínico de 5 Modelos
+* **Fecha:** Octubre 2026
+* **Avance:**
+  * **Persistencia del Dataset Tabular:** Se implementó [src/extract_all_features.py](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/src/extract_all_features.py), procesando a 100 ciclos/s los 920 audios y serializando el archivo final [data/features_icbhi_dataset.csv](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/data/features_icbhi_dataset.csv) (8.96 MB, 6,898 filas y 61 columnas acústicas predictoras).
+  * **Benchmark Clínico (5-Fold GroupKFold Patient-Wise):** Se construyó y ejecutó [src/compare_models.py](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/src/compare_models.py) evaluando 5 algoritmos sin contaminación entre pacientes:
+    1. **Regresión Logística L2 (Modelo Campeón):** Score ICBHI **61.22%**, Sensibilidad **62.95%**, Especificidad **59.49%**, F1-Score **60.52%**, Tiempo de inferencia **0.17 s**.
+    2. **Random Forest:** Score ICBHI **59.89%** (Se: 55.94%, Sp: 63.84%).
+    3. **Extra Trees:** Score ICBHI **59.68%** (Se: 57.60%, Sp: 61.76%).
+    4. **HistGradientBoosting:** Score ICBHI **59.07%** (Se: 52.71%, Sp: 65.44%).
+    5. **SVM (RBF Kernel):** Score ICBHI **58.70%** (Se: 56.68%, Sp: 60.72%).
+  * **Entregables:**
+    * Gráfica comparativa publicada en [docs/figuras_eda/comparativa_modelos_icbhi.png](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/docs/figuras_eda/comparativa_modelos_icbhi.png).
+    * Modelo Campeón serializado y listo para producción en [models/mejor_clasificador_icbhi.joblib](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/models/mejor_clasificador_icbhi.joblib).
+
+---
+
+## Hito 11: Conexión del Modelo de IA al Backend de Despliegue (`ai_engine.py`)
+* **Fecha:** Octubre 2026
+* **Avance:**
+  * Se transfirió el modelo campeón a [`FeriaTecnologica2026/Backend/models/mejor_clasificador_icbhi.joblib`](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/FeriaTecnologica2026/Backend/models/mejor_clasificador_icbhi.joblib) junto a su versión autónoma en formato JSON [`modelo_icbhi_exportado.json`](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/FeriaTecnologica2026/Backend/models/modelo_icbhi_exportado.json) (5 KB, cero dependencias).
+  * **Integración en `ai_engine.py`:**
+    * Implementación de la función de inferencia `classify_respiratory_features()` capaz de clasificar vectores acústicos con doble motor (scikit-learn pipeline o fallback matemático transparente).
+    * Vinculación en `analyze_vitals_report()`: Si la telemetría incluye ruidos adventicios o variables acústicas, el sistema computa el riesgo respiratorio, añade la anomalía clínica y ajusta el health score.
+    * Vinculación con Ollama (LLaMA 3.2 3B): La función `generate_chat_reply()` inyecta el diagnóstico acústico del modelo en el *system prompt* para que el LLM explique las sibilancias o crepitantes con base científica.
+  * **Nuevo Endpoint REST en `main.py`:** Se implementó `POST /api/ai/audio/classify` para recibir paquetes acústicos de la auscultación y emitir el diagnóstico en vivo.
+
+
+
 
 
 
