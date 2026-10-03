@@ -4,7 +4,8 @@
 > **Última actualización:** Septiembre 2026
 
 Este documento contiene la lista detallada y priorizada de tareas.  
-**Estrategia:** La **Fase 1** consolida la **base de captura y acondicionamiento de datos**. Las fases posteriores representan las **distintas alternativas de implementación** que se pueden desplegar sobre dicha base (triaje embebido, estetoscopio con IA, telemetría IoT o datalogger clínico).
+**Estrategia:** La **Fase 1** consolida la **base de captura y acondicionamiento de datos**. Las fases posteriores representan las **distintas alternativas de implementación** que se pueden desplegar sobre dicha base (triaje embebido, estetoscopio con IA, telemetría IoT o datalogger clínico).  
+> 🧠 **Plan Detallado de Datos e IA (Bloque B):** Consulta la hoja de ruta técnica completa en [docs/PLAN_INICIAL_DATOS_IA.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/docs/PLAN_INICIAL_DATOS_IA.md).
 
 ---
 

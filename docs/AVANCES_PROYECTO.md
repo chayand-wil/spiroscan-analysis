@@ -14,7 +14,7 @@ Este documento registra cronológicamente los hitos alcanzados, las decisiones t
 [FASE 2: Estructuración y Curación de Datos Clínicos]  ██████████ 100% (ICBHI y PhysioNet 100% poblados y verificados)
 [FASE 3: Ensamble Físico y Pruebas Unitarias]          ███░░░░░░░  30% (Componentes adquiridos, pinout asignado)
 [FASE 4: Firmware y Procesamiento de Señales en ESP32] █░░░░░░░░░  10% (Arquitectura definida)
-[FASE 5: Modelado de IA y Calibración Clínica]         ░░░░░░░░░░   0% (Pendiente)
+[FASE 5: Modelado de IA y Calibración Clínica]         █████░░░░░  50% (Pipeline modular listo, baseline 75.77% ICBHI Score)
 [FASE 6: Carcasa e Integración Final]                  ░░░░░░░░░░   0% (Pendiente)
 ```
 
@@ -100,5 +100,33 @@ Este documento registra cronológicamente los hitos alcanzados, las decisiones t
   * Se homologó la asignación de pines del ESP32 (`SCK=14, WS=15, SD=32, Neopixel=25, Botón=17`) en toda la documentación técnica para garantizar total compatibilidad con el firmware de producción y el circuito virtual en Wokwi.
   * **Asignación de Infraestructura Remota:** Se definió que el backend FastAPI, la base de datos persistente SQLite y el contenedor Docker con Ollama (**LLaMA 3.2 3B**) estarán alojados en una **Apple Mac Studio** (procesador Apple Silicon M-series) ubicada en una locación remota fija. Se accederá a ella a través de Internet mediante un túnel seguro público (**Cloudflare Tunnel** o **ngrok**), permitiendo aprovechar la aceleración por hardware de Apple Silicon sin tener que transportar la máquina al evento, requiriendo conexión a Internet en el stand (vía *hotspot* 4G/5G o Wi-Fi).
   * Se creó la guía conceptual viva de resolución de dudas técnicas y médicas en [docs/RESOLUCION_DUDAS.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/docs/RESOLUCION_DUDAS.md).
+
+---
+
+## Hito 8: Plan Inicial de Implementación para Ciencia de Datos e IA (Bloque B)
+* **Fecha:** Octubre 2026
+* **Avance:**
+  * Se definió la hoja de ruta técnica completa para el Bloque B en [docs/PLAN_INICIAL_DATOS_IA.md](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/docs/PLAN_INICIAL_DATOS_IA.md), estructurando 6 hitos incrementales: desde la preparación del entorno y loader de anotaciones, hasta la extracción de características acústicas (MFCC, RMS, ZCR), entrenamiento con partición *patient-wise* (sin data leakage) y exportación hacia el servidor Mac Studio (`ai_engine.py`).
+  * Se configuró el archivo maestro de dependencias [requirements.txt](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/requirements.txt) y se creó la estructura modular de directorios (`src/`, `notebooks/`, `models/`).
+
+---
+
+## Hito 9: Ejecución de Pipeline de Audio, EDA y Modelo Baseline (75.77% ICBHI Score)
+* **Fecha:** Octubre 2026
+* **Avance:**
+  * **Entorno y Dependencias:** Se inicializó el entorno virtual `.venv` y se instalaron exitosamente todas las librerías científicas (`numpy`, `pandas`, `librosa`, `soundfile`, `scikit-learn`, `matplotlib`, `seaborn`, `jupyterlab`).
+  * **Módulos de Producción (`src/`):**
+    * [src/data_loader.py](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/src/data_loader.py): Parser verificado que indexó **6,898 ciclos respiratorios** de los 126 pacientes y 920 archivos `.wav`/`.txt`.
+    * [src/audio_processing.py](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/src/audio_processing.py): Filtrado Butterworth paso-banda (100–2000 Hz), remuestreo a 16 kHz y segmentación fija a 4.0s.
+    * [src/feature_extraction.py](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/src/feature_extraction.py): Extracción de 61 variables acústicas (MFCCs estáticos, $\Delta$ y $\Delta\Delta$, energía RMS, ZCR, centroide espectral y roll-off).
+    * [src/evaluate.py](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/src/evaluate.py): Evaluación con cálculo de Sensibilidad, Especificidad e ICBHI Score.
+    * [src/train.py](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/src/train.py): Entrenamiento con partición estricta por paciente (*patient-wise*) y serialización a `models/clasificador_respiratorio.joblib`.
+  * **Análisis Exploratorio (EDA):** Se crearon los cuadernos [notebooks/01_exploracion_audio_eda.ipynb](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/notebooks/01_exploracion_audio_eda.ipynb) y se exportaron las figuras comparativas a [docs/figuras_eda/](file:///Users/wilsonjonatan/Documents/8vo%202026/f%20tecno/code/docs/figuras_eda/).
+  * **Resultados Clínicos del Baseline (Random Forest):**
+    * **Sensibilidad (Detección de anomalías):** $75.94\%$
+    * **Especificidad (Confirmación de ciclo normal):** $75.61\%$
+    * **Score Oficial ICBHI:** $\mathbf{75.77\%}$
+
+
 
 

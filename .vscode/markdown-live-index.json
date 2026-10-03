@@ -9,12 +9,12 @@
   ],
   "fileMap": [
     [
-      "avances_proyecto",
-      "docs/AVANCES_PROYECTO.md"
-    ],
-    [
       "resumen_datos",
       "docs/RESUMEN_DATOS.md"
+    ],
+    [
+      "avances_proyecto",
+      "docs/AVANCES_PROYECTO.md"
     ],
     [
       "tareas_pendientes",
@@ -23,12 +23,12 @@
   ],
   "fileDisplayMap": [
     [
-      "docs/AVANCES_PROYECTO.md",
-      "BITÁCORA DE AVANCES DEL PROYECTO"
-    ],
-    [
       "docs/RESUMEN_DATOS.md",
       "RESUMEN, CONTEO Y MAPEO DE LOS DATOS BIOMÉDICOS"
+    ],
+    [
+      "docs/AVANCES_PROYECTO.md",
+      "BITÁCORA DE AVANCES DEL PROYECTO"
     ],
     [
       "docs/TAREAS_PENDIENTES.md",
@@ -36,6 +36,14 @@
     ]
   ],
   "fileMetadataMap": [
+    [
+      "docs/TAREAS_PENDIENTES.md",
+      {
+        "path": "/docs",
+        "tags": [],
+        "preview": "Proyecto: Monitor Portátil de Salud Cardiorrespiratoria (Óptico + Acústico) Asignatura: f tecno (8vo..."
+      }
+    ],
     [
       "docs/AVANCES_PROYECTO.md",
       {
@@ -50,14 +58,6 @@
         "path": "/docs",
         "tags": [],
         "preview": "Directorio base: data/ Última actualización: Septiembre 2026 Este documento detalla el inventario cu..."
-      }
-    ],
-    [
-      "docs/TAREAS_PENDIENTES.md",
-      {
-        "path": "/docs",
-        "tags": [],
-        "preview": "Proyecto: Monitor Portátil de Salud Cardiorrespiratoria (Óptico + Acústico) Asignatura: f tecno (8vo..."
       }
     ]
   ],
